@@ -107,8 +107,8 @@ for bar, yerr_ in zip(bars, yerr):
     low = bar.get_height() - yerr_
     high = bar.get_height() + yerr_
     percentage = (high-threshold)/(high-low)
-    if percentage>1: percentage = 1
-    if percentage<0: percentage=0
+    percentage = min(percentage, 1)
+    percentage = max(percentage, 0)
     percentages.append(percentage)
 percentages
 
