@@ -159,21 +159,8 @@ def answer_six():
 # In[ ]:
 
 def answer_seven():
-    pop = census_df[['STNAME','CTYNAME','POPESTIMATE2015','POPESTIMATE2014','POPESTIMATE2013','POPESTIMATE2012','POPESTIMATE2011','POPESTIMATE2010']]
-    pop = pop[pop['STNAME']!=pop['CTYNAME']]
-    index = (pop.max(axis=1)-pop.min(axis=1)).argmax()
-    return census_df.loc[index]['CTYNAME']
-
-
-# ### Question 8
-# In this datafile, the United States is broken up into four regions using the "REGION" column. 
-# 
-# Create a query that finds the counties that belong to regions 1 or 2, whose name starts with 'Washington', and whose POPESTIMATE2015 was greater than their POPESTIMATE 2014.
-# 
-# *This function should return a 5x2 DataFrame with the columns = ['STNAME', 'CTYNAME'] and the same index ID as the census_df (sorted ascending by index).*
-
-# In[ ]:
-
-
-    return census_df[(census_df['REGION']<3 ) & (census_df['CTYNAME'] == 'Washington County') & (census_df['POPESTIMATE2015']>census_df['POPESTIMATE2014'])][['STNAME','CTYNAME']]
+	pop = census_df[['STNAME','CTYNAME','POPESTIMATE2015','POPESTIMATE2014','POPESTIMATE2013','POPESTIMATE2012','POPESTIMATE2011','POPESTIMATE2010']]
+	pop = pop[pop['STNAME']!=pop['CTYNAME']]
+	index = (pop.max(axis=1)-pop.min(axis=1)).argmax()
+	return census_df.loc[index]['CTYNAME']
 

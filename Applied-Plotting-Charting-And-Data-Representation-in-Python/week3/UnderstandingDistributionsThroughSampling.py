@@ -100,7 +100,7 @@ def update(curr):
         ax[i].set_title(titles[i])
         ax[i].set_ylabel('Normed Frequency')
         ax[i].set_xlabel('Value')
-        ax[i].annotate('n = {}'.format(100*curr), [anno_x[i], 0.5])
+        ax[i].annotate(f'n = {100 * curr}', [anno_x[i], 0.5])
     plt.tight_layout()
 a = animation.FuncAnimation(fig, update, interval = 100)
 

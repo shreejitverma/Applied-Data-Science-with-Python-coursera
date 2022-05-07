@@ -88,11 +88,11 @@ fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, sharex=True)
 axs = [ax1,ax2,ax3,ax4]
 
 # draw n = 10, 100, 1000, and 10000 samples from the normal distribution and plot corresponding histograms
-for n in range(0,len(axs)):
+for n in range(len(axs)):
     sample_size = 10**(n+1)
     sample = np.random.normal(loc=0.0, scale=1.0, size=sample_size)
     axs[n].hist(sample)
-    axs[n].set_title('n={}'.format(sample_size))
+    axs[n].set_title(f'n={sample_size}')
 
 
 # In[11]:
@@ -101,11 +101,11 @@ for n in range(0,len(axs)):
 fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, sharex=True)
 axs = [ax1,ax2,ax3,ax4]
 
-for n in range(0,len(axs)):
+for n in range(len(axs)):
     sample_size = 10**(n+1)
     sample = np.random.normal(loc=0.0, scale=1.0, size=sample_size)
     axs[n].hist(sample, bins=100)
-    axs[n].set_title('n={}'.format(sample_size))
+    axs[n].set_title(f'n={sample_size}')
 
 
 # In[12]:
@@ -275,7 +275,7 @@ def update(curr):
     plt.gca().set_title('Sampling the Normal Distribution')
     plt.gca().set_ylabel('Frequency')
     plt.gca().set_xlabel('Value')
-    plt.annotate('n = {}'.format(curr), [3,27])
+    plt.annotate(f'n = {curr}', [3,27])
 
 
 # In[41]:
@@ -327,7 +327,7 @@ plt.gca().set_xlabel('Height')
 
 def onpick(event):
     origin = df.iloc[event.ind[0]]['origin']
-    plt.gca().set_title('Selected item came from {}'.format(origin))
+    plt.gca().set_title(f'Selected item came from {origin}')
 
 # tell mpl_connect we want to pass a 'pick_event' into onpick when the event is detected
 plt.gcf().canvas.mpl_connect('pick_event', onpick)
