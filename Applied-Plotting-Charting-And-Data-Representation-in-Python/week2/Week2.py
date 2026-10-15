@@ -337,11 +337,7 @@ plt.bar(xvals, linear_data, width = 0.3)
 
 # In[34]:
 
-new_xvals = []
-
-# plot another set of bars, adjusting the new xvals to make up for the first set of bars plotted
-for item in xvals:
-    new_xvals.append(item+0.3)
+new_xvals = [item+0.3 for item in xvals]
 
 plt.bar(new_xvals, exponential_data, width = 0.3 ,color='red')
 
